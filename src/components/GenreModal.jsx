@@ -4,17 +4,17 @@ import useGenreStore from "../store/Genre/GenreStore";
 
 const GenreModal = ({ open, toggle, editJanr, required }) => {
   const { postGenre, updateGenre, getGenre } = useGenreStore();
-  const addJanr = async(e) => {
+  const addJanr = async (e) => {
     e.preventDefault();
     let payload = {
       name: e.target[0].value ? e.target[0].value : editJanr.name,
     };
     if (editJanr !== "") {
-      await updateGenre({...payload, id: editJanr.id})
+      await updateGenre({ ...payload, id: editJanr.id })
       getGenre()
       toggle()
     } else {
-      await postGenre({...payload})
+      await postGenre({ ...payload })
       getGenre()
       toggle()
     }
@@ -27,23 +27,9 @@ const GenreModal = ({ open, toggle, editJanr, required }) => {
             <h1 className="text-[28px] text-center my-[20px]">
               {editJanr ? "Edit Genre" : "Add Genre"}
             </h1>
-            <form
-              onSubmit={addJanr}
-              className="flex flex-col items-center w-[70%]"
-            >
-              <input
-                required={required}
-                type="text"
-                className="form-control my-[20px]"
-                placeholder="Genre"
-                defaultValue={editJanr.name}
-              />
-              <button
-                type="submit"
-                className="  px-[20px] py-[10px] bg-purple-600 text-white rounded-xl my-[20px]"
-              >
-                Save
-              </button>
+            <form onSubmit={addJanr}>
+              <input type="text" placeholder='name' required={required} defaultValue={editJanr.name} className='w-[100%] border py-[8px] px-[10px] rounded-[8px] my-1' />
+              <button type='submit' className='px-[15px] py-[8px] rounded-[10px] bg-[#4882e7]'>save</button>
             </form>
           </div>
         </ModalBody>

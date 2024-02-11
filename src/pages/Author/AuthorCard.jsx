@@ -37,7 +37,7 @@ const AuthorCard = ({item, updateAuthor, deleteItem}) => {
                       to={`/single__author/${item.id}`}
                       className="no-underline px-[15px] py-[8px] text-teal-50 bg-indigo-500 rounded-md w-[100%]"
                     >
-                      Toliq malumot
+                      view more
                     </Link>
                   </div>
                 </div>

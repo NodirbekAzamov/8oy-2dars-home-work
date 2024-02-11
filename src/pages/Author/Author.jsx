@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AuthorModal from "../../components/AuthorModal";
 import DeleteAuthor from "../../components/DeleteAuthor";
+import axiosClient from "../../plugins/axiosClient";
 import AuthorCard from "./AuthorCard";
 import useAuthorStore from "../../store/Authors/AuthorStore";
 

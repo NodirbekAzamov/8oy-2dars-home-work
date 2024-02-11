@@ -14,7 +14,6 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [type, setType] = useState(false);
   const navigate = useNavigate();
-  
   const handleSignUp = async (e) => {
     e.preventDefault();
     await signUp({

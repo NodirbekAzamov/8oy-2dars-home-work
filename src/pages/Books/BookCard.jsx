@@ -1,41 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CiEdit } from "react-icons/ci";
-import { MdDeleteOutline } from "react-icons/md";
-const BookCard = ({ item, updateBook, removeBook }) => {
+const BookCard = ({ item, BookEdit, removeBook }) => {
   return (
     <div>
-      <div className="w-[480px] shadow-md rounded-md bg-white p-[10px] flex flex-wrap">
-        <img
-          src={item.image}
-          alt={item.name}
-          className="w-[60%] h-[200px] object-contain border-2"
-        />
-        <div className=" w-[40%] p-[10px]">
-          <h3 className="text-[20px]">Name: {item?.name}</h3>
-          <h3 className="text-[20px]">Author: {item?.author?.full_name}</h3>
-          <h5>Price: ${item?.price}</h5>
-          <div className="flex gap-[20px] w-[100%]">
-            <button
-              onClick={() => updateBook(item)}
-              className="text-violet-500 mt-[10px] text-[25px]"
-            >
-              <CiEdit/>
-            </button>
-            <button
-              onClick={() => removeBook(item)}
-              className="text-red-500 mt-[10px] text-[25px]"
-            >
-              <MdDeleteOutline/>
-            </button>
-          </div>
+      <div className='border w-[270px] bg-white h-[420px] rounded-[20px] p-[15px] hover:scale-[1.1] transition-[0.5s] '>
+        <img src={item.image} alt="img" className='w-[100%] h-[50%] rounded-[20px]  ' />
+        <h6 className='text-[20px] pt-[10px] max-w-[120px]'>Name: {item.name}</h6>
+        <h6 className='text-[18px] py-[5px]'>Price: ${item.price}</h6>
+        <Link to={`/single__book/${item.id}`} className=' text-[#fff]'><button className='bg-[#21589b] mx-auto rounded-[10px]   py-[8px] w-[100%]'>More</button></Link>
+        <div className='flex gap-[8px] mt-[15px]'>
+          <button onClick={() => BookEdit(item)} className='bg-[#21589b] mt-[5px] mx-auto rounded-[10px] text-[#fff] py-[8px] w-[50%]'>edit</button>
+          <button onClick={() => removeBook(item.id)} className='bg-[#ff2525] mt-[5px] mx-auto rounded-[10px] text-[#fff] py-[8px] w-[50%]'>delete</button>
         </div>
-        <Link
-          to={`/single__book/${item.id}`}
-          className="no-underline mt-[10px] block text-center px-[20px] py-[10px] bg-purple-400 rounded-md text-white w-[100%] hover:bg-purple-600 transition-all"
-        >
-          Toliq malumot
-        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
+import axiosClient from "../plugins/axiosClient";
 import upload from "../assets/upload.jpg";
 import useAuthorStore from "../store/Authors/AuthorStore";
 import useImageStore from "../store/UploadImg/UploadImg";

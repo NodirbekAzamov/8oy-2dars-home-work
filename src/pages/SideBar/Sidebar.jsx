@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdLogout } from "react-icons/md";
 import 'react-toastify/dist/ReactToastify.css';
+import book_img from "../../assets/books.jpg"
 const Sidebar = () => {
   const [links, setLinks] = useState([
     { id: 1, value: "Books" },
@@ -20,6 +21,11 @@ const Sidebar = () => {
   return (
     <div className=" fixed w-[250px] h-[100vh] bg-white py-[20px] flex flex-col shadow">
       <div className="h-[200px] w-[100%] flex justify-center">
+        <img
+          className="p-[2px]  w-[190px] h-[190px] rounded-[50%]  hover:scale-[1.2] hover:border-[10px] border-[#21219eb7] transition-[0.5s]"
+          src={book_img}
+          alt="topimg"
+        />
       </div>
       <ul className="mt-[25px] gap-[10px] flex flex-col justify-evenly w-[250px] items-center ps-0">
         {links.map((item, index) => {

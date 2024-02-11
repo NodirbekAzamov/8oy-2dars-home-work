@@ -53,7 +53,7 @@ const Books = () => {
         <div className="flex gap-3 flex-wrap w-[100%]">
           {books.map((item, index) => {
             return (
-              <BookCard key={index} item={item} removeBook={removeBook} updateBook={editBook}/>
+              <BookCard key={index} item={item} removeBook={removeBook} BookEdit={editBook}/>
             );
           })}
         </div>

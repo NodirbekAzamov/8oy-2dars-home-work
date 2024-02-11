@@ -3,26 +3,28 @@ import useBookStore from "../../store/Books/BookStore";
 
 const SingleBook = () => {
   const id = window.location.href.split("/")[4];
-  const {singleBook, getSingleBook} = useBookStore()
+  const { singleBook, getSingleBook } = useBookStore()
   useEffect(() => {
     getSingleBook(id)
   }, []);
   return (
-    <div className="w-[100%] h-[100vh] flex items-center justify-center flex-col gap-[20px] bg-slate-200">
-      <div className="w-[900px] h-[70vh] bg-white p-[10px] rounded-lg flex justify-end gap-[10px] relative overflow-hidden shadow-md">
-        <div className=" overflow-hidden w-[1000px] border-[#7e22ce] h-[1000px] absolute rounded-full border-[20px] top-[-200px] left-[-500px]">
-            <img className="absolute top-[160px] right-0 w-[500px] h-[550px] object-cover rounded-2xl" src={singleBook.image} alt={singleBook.name} />
-        </div>
-        <div className="w-[55%] h-[100%]"></div>
-        <div className="w-[45%] bg-white h-[100%] rounded-2xl p-[20px]">
-            <h3 className="mt-[20px]">Name: {singleBook?.name}</h3>
-            <h3>Author: {singleBook?.author?.full_name}</h3>
-            <h3>Price: ${singleBook?.price}</h3>
-            <h3>Book code: {singleBook.code}</h3>
-            <h3>Janr: {singleBook?.janr?.name}</h3>
-            <h3>Description:</h3>
+    <div className='bg-[#bfc6c4] w-[100%] h-[100vh] flex flex-col justify-center items-center'>
+      <div>
+        <div className='flex gap-[20px] justify-center items-center p-[15px] bg-[#fff] w-[700px] h-[400px]'>
+          <div className='w-[50%] h-[100%]'>
+            <img src={singleBook.image} alt="img" className='w-[100%] h-[100%] object-cover' />
+          </div>
+          <div className='w-[50%] h-[100%] flex justify-center  flex-col'>
+
+            <h5>Name: <span className=' text-orange-700'>{singleBook?.name}</span></h5>
+            <h5>Full Name: <span className=' text-orange-700'> {singleBook?.author?.full_name}</span></h5>
+            <h5>Price: <span className=' text-orange-700'>{singleBook?.price}</span></h5>
+            <h5> Code: <span className=' text-orange-700'>{singleBook?.code}</span></h5>
+            <h5>Janr: <span className=' text-orange-700'> {singleBook?.janr?.name}</span></h5>
+            <h5>Description:</h5>
             <hr />
             <p>{singleBook.description}</p>
+          </div>
         </div>
       </div>
     </div>
