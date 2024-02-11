@@ -1,28 +1,24 @@
 import React from 'react'
-import SingleUp from './features/Auth/SingleUp'
+import SignUp from './pages/Auth/SignUp'
 import { Route, Routes } from 'react-router-dom'
-import Logout from './features/Auth/Logout'
-import SignIn from './features/Auth/SignIn'
-import Single_Page from './features/book/Single_Page'
-import Single_Author from './features/Author/Single_Author'
-import Menu from './SideBar/Menu'
-
-export default function App() {
-
+import SignIn from './pages/Auth/SignIn'
+import Sidebar from './pages/SideBar/Sidebar'
+import SingleAuthor from './pages/Author/SingleAuthor'
+import Main from './pages/Main/Main'
+import SingleBook from './pages/Books/SingleBook'
+const App = () => {
   return (
-    <>
-      <div className=''>
-        <Routes>
-          <Route path='/' element={<SingleUp />} />
-          <Route path='signIn' element={<SignIn />} />
-          <Route path='logout' element={<Logout />} />
-          <Route path='books' element={<Menu />} />
-          <Route path='single_page/:id' element={<Single_Page/>}/>
-          <Route path='singleAuthor/:id' element={<Single_Author/>}/>
-        </Routes>
-      </div>
-    </>
+    <div>
+      <Routes>
+        <Route path='/' element={<SignUp/>}></Route>
+        <Route path='signin' element={<SignIn/>}></Route>
+        <Route path='main' element={<Main/>}></Route>
+        <Route path='sidebar' element={<Sidebar/>}></Route>
+        <Route path='single__book/:id' element={<SingleBook/>}></Route>
+        <Route path='single__author/:id' element={<SingleAuthor/>}></Route>
+      </Routes>
+    </div>
   )
 }
 
-
+export default App
