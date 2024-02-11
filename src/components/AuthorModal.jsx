@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Modal, ModalBody } from "reactstrap";
-import axiosClient from "../plugins/axiosClient";
 import upload from "../assets/upload.jpg";
 import useAuthorStore from "../store/Authors/AuthorStore";
-import useImageStore from "../store/ImageUpload/ImageUpload";
+import useImageStore from "../store/UploadImg/UploadImg";
 
 const AuthorModal = ({ open, toggle, update, required, imagelink, setImageLink }) => {
   const { postAuthor, getAuthors, updateAuthor } = useAuthorStore();

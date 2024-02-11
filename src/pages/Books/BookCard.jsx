@@ -34,7 +34,7 @@ const BookCard = ({ item, updateBook, removeBook }) => {
           to={`/single__book/${item.id}`}
           className="no-underline mt-[10px] block text-center px-[20px] py-[10px] bg-purple-400 rounded-md text-white w-[100%] hover:bg-purple-600 transition-all"
         >
-          View more
+          Toliq malumot
         </Link>
       </div>
     </div>

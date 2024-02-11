@@ -10,10 +10,9 @@ const SingleAuthor = () => {
   }, []);
   return (
     <div className="w-[100%] h-[100vh] flex items-center justify-center flex-col bg-slate-200">
-        <h1>{singleAuthor.full_name}</h1>
       <div className="w-[700px] flex h-[450px] p-[10px] rounded-lg bg-white shadow-md relative overflow-hidden">
         <div className="w-[50%]"></div>
-        <div className="w-[1000px] h-[1000px] border-[20px] border-[#7e22ce] rounded-full absolute top-[-549px] left-[-460px] overflow-hidden">
+        <div className="w-[1000px] h-[1000px] border-[20px] border-[#ffffff] rounded-full absolute top-[-549px] left-[-460px] overflow-hidden">
         <img src={singleAuthor.image} alt={singleAuthor.full_name} className="w-[530px] h-[430px] absolute z-20 bottom-0 right-0 object-cover"/>
         </div>
         <div className="w-[50%] h-[100%] flex flex-col justify-end items-end py-[50px] gap-[10px] px-[20px]">

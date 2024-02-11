@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axiosClient from "../plugins/axiosClient";
 import upload from "../assets/upload.jpg"
 import useBookStore from "../store/Books/BookStore";
-import useImageStore from "../store/ImageUpload/ImageUpload";
+import useImageStore from "../store/UploadImg/UploadImg";
 const AddBook = ({ open, toggle, edit, imglink, setImgLink, required }) => {
   const [janrlar, setJanrlar] = useState([])
   const [authors, setAuthors] = useState([])
