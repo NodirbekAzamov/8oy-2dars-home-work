@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: import.meta.env.VITE_APP_BASE_URL,
+  // baseURL: import.meta.env.VITE_APP_BASE_URL,
+  baseURL: "http://34.143.212.163:3000/api",
 });
 
 axiosClient.interceptors.request.use(
